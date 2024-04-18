@@ -1,0 +1,3 @@
+<launch>
+        <node name="tractor_remote" pkg="tractor_remote" type="tractor_remote" output="screen"></node>
+</launch>

@@ -1,0 +1,10 @@
+<launch>
+        <arg name="model" />
+	<arg name="robot_namespace" default="/"/>
+        <param name="robot_description" command="$(find xacro)/xacro '$(find tractor_description)/urdf/tractor_ackerman.xacro' robot_namespace:=$(arg robot_namespace)" />
+        
+        <node name="tractor_control" pkg="tractor_control" type="tractor_control" output="screen" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+        
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tractor_description)/rviz/model_display.rviz" output="screen" />
+</launch>
